@@ -41,7 +41,20 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' AND '$(TargetFramework)' == 'net9.0-ios' ">
+    <DefineConstants>DEBUG</DefineConstants>
+    <Optimize>false</Optimize>
+    <MtouchLink>None</MtouchLink>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' AND '$(TargetFramework)' == 'net9.0-ios' ">
+    <Optimize>true</Optimize>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+
+  <ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
