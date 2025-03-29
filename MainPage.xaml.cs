@@ -7,7 +7,7 @@ namespace ExpLogs
     public partial class MainPage : ContentPage
     {
         int count = 0;
-        private const string GoogleScriptUrl = "https://script.google.com/macros/s/AKfycbx0QmNhSy0VnNTy4lY1rkGIApDEnjerKnCSA53nkV-yHnUxanlCItEXk3n7ZhabNzqJ/exec";
+        private const string GoogleScriptUrl = "";
         public MainPage()
         {
             InitializeComponent();
@@ -65,7 +65,7 @@ namespace ExpLogs
 
     public partial class ShowSheetPage : ContentPage
     {
-        private const string GoogleScriptUrl = "https://script.google.com/macros/s/AKfycbx0QmNhSy0VnNTy4lY1rkGIApDEnjerKnCSA53nkV-yHnUxanlCItEXk3n7ZhabNzqJ/exec";
+        private const string GoogleScriptUrl = "https:/kV-yHnUxanlCItEXk3n7ZhabNzqJ/exec";
 
         public ObservableCollection<Expenditure> Expenditures { get; set; } = new ObservableCollection<Expenditure>();
 
