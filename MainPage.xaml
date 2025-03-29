@@ -1,0 +1,72 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpLogs.MainPage"
+             BackgroundColor="Black"
+             Padding="20">
+
+    <VerticalStackLayout Spacing="15" Padding="20">
+        <Label Text="Expenditure Log"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="MediumPurple"
+               HorizontalOptions="Center" />
+
+        <Frame Padding="10" BackgroundColor="DimGray" CornerRadius="10">
+            <DatePicker x:Name="datePicker" TextColor="White" />
+        </Frame>
+
+        <Frame Padding="10" BackgroundColor="DimGray" CornerRadius="10">
+            <Entry x:Name="descriptionEntry"
+                   Placeholder="Enter expenditure description"
+                   TextColor="White"
+                   PlaceholderColor="LightGray" />
+        </Frame>
+
+        <Label Text="Select expenditure type"
+               FontSize="16"
+               TextColor="LightGray" />
+
+        <Frame Padding="10" BackgroundColor="DimGray" CornerRadius="10">
+            <Picker x:Name="typePicker"
+                    Title="Select expenditure type"
+                    TextColor="White">
+                <Picker.Items>
+                    <x:String>Food</x:String>
+                    <x:String>Grocery</x:String>
+                    <x:String>Transport</x:String>
+                    <x:String>Bills</x:String>
+                    <x:String>EMI</x:String>
+                    <x:String>Shopping</x:String>
+                    <x:String>Party</x:String>
+                    <x:String>Other</x:String>
+                </Picker.Items>
+            </Picker>
+        </Frame>
+
+        <Frame Padding="10" BackgroundColor="DimGray" CornerRadius="10">
+            <Entry x:Name="amountEntry"
+                   Placeholder="Enter amount"
+                   Keyboard="Numeric"
+                   TextColor="White"
+                   PlaceholderColor="LightGray" />
+        </Frame>
+
+        <!-- Activity Indicator (Hidden by Default) -->
+        <ActivityIndicator x:Name="loadingIndicator"
+                           IsRunning="False"
+                           IsVisible="False"
+                           Color="MediumPurple"
+                           HorizontalOptions="Center"
+                           HeightRequest="40"/>
+
+        <Button x:Name="submitButton"
+                Text="Submit"
+                Clicked="OnSubmitClicked"
+                BackgroundColor="MediumPurple"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                HeightRequest="50"/>
+    </VerticalStackLayout>
+
+</ContentPage>

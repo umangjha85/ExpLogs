@@ -1,0 +1,74 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpLogs.ShowSheetPage"
+             BackgroundColor="Black"
+             Title="Expenditure Log">
+
+    <VerticalStackLayout Padding="10">
+
+        <Label Text="Expenditure Log"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="MediumPurple"
+               HorizontalOptions="Center" />
+
+        <!-- Table Header (Fixed) -->
+        <Grid BackgroundColor="DimGray" Padding="5" ColumnSpacing="2" RowSpacing="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="0" BorderColor="White" Padding="5" BackgroundColor="Black">
+                <Label Text="Date" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+            </Frame>
+            <Frame Grid.Column="1" BorderColor="White" Padding="5" BackgroundColor="Black">
+                <Label Text="Description" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+            </Frame>
+            <Frame Grid.Column="2" BorderColor="White" Padding="5" BackgroundColor="Black">
+                <Label Text="Type" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+            </Frame>
+            <Frame Grid.Column="3" BorderColor="White" Padding="5" BackgroundColor="Black">
+                <Label Text="Amount" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+            </Frame>
+        </Grid>
+
+        <!-- Scrollable Data -->
+        <ScrollView>
+            <CollectionView x:Name="dataCollectionView">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnSpacing="2" RowSpacing="2" Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.Column="0" BorderColor="White" Padding="5" BackgroundColor="Black">
+                                <Label Text="{Binding Date}" TextColor="White"/>
+                            </Frame>
+                            <Frame Grid.Column="1" BorderColor="White" Padding="5" BackgroundColor="Black">
+                                <Label Text="{Binding Description}" TextColor="White"/>
+                            </Frame>
+                            <Frame Grid.Column="2" BorderColor="White" Padding="5" BackgroundColor="Black">
+                                <Label Text="{Binding Type}" TextColor="White"/>
+                            </Frame>
+                            <Frame Grid.Column="3" BorderColor="White" Padding="5" BackgroundColor="Black">
+                                <Label Text="{Binding Amount}" TextColor="White"/>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
